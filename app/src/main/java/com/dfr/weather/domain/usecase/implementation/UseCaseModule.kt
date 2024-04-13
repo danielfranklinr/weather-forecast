@@ -1,9 +1,12 @@
-package com.dfr.weather.domain.usecase
+package com.dfr.weather.domain.usecase.implementation
 
 import android.content.Context
 import com.dfr.weather.domain.repository.DeviceLocationRepository
 import com.dfr.weather.domain.repository.SearchableCitiesRepository
 import com.dfr.weather.domain.repository.WeatherProviderRemoteRepository
+import com.dfr.weather.domain.usecase.GetCurrentWeatherByCityNameUseCase
+import com.dfr.weather.domain.usecase.GetMyLocationCurrentWeatherUseCase
+import com.dfr.weather.domain.usecase.GetSearchableCitiesUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,14 +18,7 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object UseCaseModule {
-    @Singleton
-    @Provides
-    fun providesGetCityCoordinatesUseCase(
-        @ApplicationContext context: Context,
-        weatherProviderRemoteRepository: WeatherProviderRemoteRepository,
-    ): GetCityCoordinatesUseCase {
-        return GetCityCoordinatesUseCaseImpl(context, weatherProviderRemoteRepository)
-    }
+
 
     @Singleton
     @Provides
@@ -33,14 +29,6 @@ object UseCaseModule {
         return GetCurrentWeatherByCityNameUseCaseImpl(context, weatherProviderRemoteRepository)
     }
 
-    @Singleton
-    @Provides
-    fun providesGetCurrentWeatherByCoordinatesUseCase(
-        @ApplicationContext context: Context,
-        weatherProviderRemoteRepository: WeatherProviderRemoteRepository,
-    ): GetCurrentWeatherByCoordinatesUseCase {
-        return GetCurrentWeatherByCoordinatesUseCaseImpl(context, weatherProviderRemoteRepository)
-    }
 
     @Singleton
     @Provides

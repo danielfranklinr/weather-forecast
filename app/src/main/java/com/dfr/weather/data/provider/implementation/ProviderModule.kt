@@ -1,6 +1,7 @@
-package com.dfr.weather.data.provider
+package com.dfr.weather.data.provider.implementation
 
 import android.content.Context
+import com.dfr.weather.data.provider.DeviceLocationProvider
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

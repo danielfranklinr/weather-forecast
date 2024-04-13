@@ -1,4 +1,4 @@
-package com.dfr.weather.data.provider
+package com.dfr.weather.data.provider.implementation
 
 import android.content.Context
 import android.location.Location

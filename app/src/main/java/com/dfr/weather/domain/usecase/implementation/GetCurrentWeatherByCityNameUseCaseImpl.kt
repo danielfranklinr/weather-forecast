@@ -1,9 +1,10 @@
-package com.dfr.weather.domain.usecase
+package com.dfr.weather.domain.usecase.implementation
 
 import android.content.Context
 import com.dfr.weather.R
 import com.dfr.weather.domain.model.WeatherDataDTO
 import com.dfr.weather.domain.repository.WeatherProviderRemoteRepository
+import com.dfr.weather.domain.usecase.GetCurrentWeatherByCityNameUseCase
 import dagger.hilt.android.qualifiers.ApplicationContext
 import io.reactivex.rxjava3.core.Single
 import javax.inject.Inject

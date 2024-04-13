@@ -1,4 +1,4 @@
-package com.dfr.weather.data.provider
+package com.dfr.weather.data.provider.implementation
 
 import android.Manifest
 import android.content.Context
@@ -10,6 +10,7 @@ import android.os.Bundle
 import android.os.Looper
 import androidx.core.app.ActivityCompat
 import com.dfr.weather.data.model.DeviceCoordinates
+import com.dfr.weather.data.provider.DeviceLocationProvider
 import dagger.hilt.android.qualifiers.ApplicationContext
 import io.reactivex.rxjava3.core.Single
 import javax.inject.Inject
@@ -41,18 +42,23 @@ class DeviceLocationProviderImpl @Inject constructor(
                 }
 
                 override fun onLocationChanged(locations: MutableList<Location>) {
+                    super.onLocationChanged(locations)
                 }
 
                 override fun onFlushComplete(requestCode: Int) {
+                    super.onFlushComplete(requestCode)
                 }
 
                 override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {
+                    super.onStatusChanged(provider, status, extras)
                 }
 
                 override fun onProviderEnabled(provider: String) {
+                    super.onProviderEnabled(provider)
                 }
 
                 override fun onProviderDisabled(provider: String) {
+                    super.onProviderDisabled(provider)
                 }
             }
 

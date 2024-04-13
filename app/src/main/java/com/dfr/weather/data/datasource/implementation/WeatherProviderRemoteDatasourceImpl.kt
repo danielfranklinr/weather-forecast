@@ -1,6 +1,7 @@
-package com.dfr.weather.data.datasource
+package com.dfr.weather.data.datasource.implementation
 
 import android.content.Context
+import com.dfr.weather.data.datasource.WeatherProviderRemoteDatasource
 import com.dfr.weather.data.model.WeatherCityInformation
 import com.dfr.weather.data.model.WeatherData
 import com.dfr.weather.data.network.service.OpenWeatherApiService

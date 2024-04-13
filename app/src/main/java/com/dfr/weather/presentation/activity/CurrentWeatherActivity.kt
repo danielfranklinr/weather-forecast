@@ -43,6 +43,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.dfr.weather.R
 import com.dfr.weather.presentation.state.CurrentWeatherUIState
 import com.dfr.weather.presentation.ui.theme.WeatherTheme
@@ -54,7 +55,6 @@ private const val LOCATION_PERMISSION_REQUEST_CODE = 2234145
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
-    private val viewModel: CurrentWeatherViewModel by viewModels()
     private val requestPermissionLauncher =
         registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { }
 
@@ -67,7 +67,7 @@ class MainActivity : ComponentActivity() {
                 Surface(
                     modifier = Modifier.fillMaxSize()
                 ) {
-                    CurrentWeatherScreenContainer(viewModel)
+                    CurrentWeatherScreenContainer()
                 }
             }
         }
@@ -115,10 +115,11 @@ class MainActivity : ComponentActivity() {
 
 
 @Composable
-fun CurrentWeatherScreenContainer(mainViewModel: CurrentWeatherViewModel) {
+fun CurrentWeatherScreenContainer(mainViewModel: CurrentWeatherViewModel = hiltViewModel()) {
     val searchableCities = mainViewModel.getSearchableCities()
     var expanded by remember { mutableStateOf(false) }
     var selectedText by remember { mutableStateOf(searchableCities[0]) }
+
     Column {
         Row(
             modifier = Modifier
@@ -160,17 +161,6 @@ fun CurrentWeatherScreenContainer(mainViewModel: CurrentWeatherViewModel) {
                 }
             }
 
-//            Text(
-//                modifier = Modifier
-//                    .align(Alignment.CenterVertically)
-//                    .weight(1f),
-//                textAlign = TextAlign.Center,
-//                style = TextStyle(color = Color.White),
-//                text = stringResource(
-//                    id = R.string.activity_current_weather_label_or
-//                )
-//            )
-
             Spacer(
                 modifier = Modifier
                     .align(Alignment.CenterVertically)
@@ -195,6 +185,7 @@ fun CurrentWeatherScreenContainer(mainViewModel: CurrentWeatherViewModel) {
         // Button to get weather
 
         Spacer(modifier = Modifier.height(16.dp))
+
         when (val state = mainViewModel.uiState.collectAsState().value) {
             is CurrentWeatherUIState.Instructions -> InstructionsComponent()
             is CurrentWeatherUIState.Loading -> Column(

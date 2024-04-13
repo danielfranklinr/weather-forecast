@@ -1,7 +1,7 @@
 package com.dfr.weather.data.model
 
 import android.content.Context
-import com.dfr.weather.data.network.service.response.OpenWeatherResponse
+import com.dfr.weather.data.network.service.implementation.response.OpenWeatherResponse
 import com.dfr.weather.data.network.transformer.IconUrlTransformer
 
 data class WeatherData(

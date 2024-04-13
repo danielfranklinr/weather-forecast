@@ -1,7 +1,7 @@
 package com.dfr.weather.data.network.service
 
-import com.dfr.weather.data.network.service.response.OpenWeatherCity
-import com.dfr.weather.data.network.service.response.OpenWeatherResponse
+import com.dfr.weather.data.network.service.implementation.response.OpenWeatherCity
+import com.dfr.weather.data.network.service.implementation.response.OpenWeatherResponse
 import io.reactivex.rxjava3.core.Observable
 import retrofit2.http.GET
 import retrofit2.http.Query

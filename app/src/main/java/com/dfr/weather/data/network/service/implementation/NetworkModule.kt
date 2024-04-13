@@ -1,7 +1,8 @@
-package com.dfr.weather.data.network.service
+package com.dfr.weather.data.network.service.implementation
 
 import android.content.Context
 import com.dfr.weather.R
+import com.dfr.weather.data.network.service.OpenWeatherApiService
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dagger.Module
 import dagger.Provides

@@ -1,6 +1,6 @@
 package com.dfr.weather.data.model
 
-import com.dfr.weather.data.network.service.response.OpenWeatherCity
+import com.dfr.weather.data.network.service.implementation.response.OpenWeatherCity
 
 data class WeatherCityInformation(
     val country: String,

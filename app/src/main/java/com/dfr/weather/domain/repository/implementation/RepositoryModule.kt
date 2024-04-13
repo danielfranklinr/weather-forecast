@@ -1,8 +1,11 @@
-package com.dfr.weather.domain.repository
+package com.dfr.weather.domain.repository.implementation
 
 import android.content.Context
 import com.dfr.weather.data.datasource.WeatherProviderRemoteDatasource
 import com.dfr.weather.data.provider.DeviceLocationProvider
+import com.dfr.weather.domain.repository.DeviceLocationRepository
+import com.dfr.weather.domain.repository.SearchableCitiesRepository
+import com.dfr.weather.domain.repository.WeatherProviderRemoteRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

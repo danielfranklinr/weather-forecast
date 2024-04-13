@@ -1,4 +1,4 @@
-package com.dfr.weather.data.network.service.response
+package com.dfr.weather.data.network.service.implementation.response
 
 import kotlinx.serialization.Serializable
 

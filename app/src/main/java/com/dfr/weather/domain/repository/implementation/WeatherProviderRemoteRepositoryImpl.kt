@@ -1,9 +1,10 @@
-package com.dfr.weather.domain.repository
+package com.dfr.weather.domain.repository.implementation
 
 import android.content.Context
 import com.dfr.weather.data.datasource.WeatherProviderRemoteDatasource
 import com.dfr.weather.domain.model.WeatherCityDTO
 import com.dfr.weather.domain.model.WeatherDataDTO
+import com.dfr.weather.domain.repository.WeatherProviderRemoteRepository
 import dagger.hilt.android.qualifiers.ApplicationContext
 import io.reactivex.rxjava3.core.Single
 import javax.inject.Inject

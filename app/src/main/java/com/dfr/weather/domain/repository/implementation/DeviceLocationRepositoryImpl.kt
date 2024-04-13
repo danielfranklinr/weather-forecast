@@ -1,7 +1,8 @@
-package com.dfr.weather.domain.repository
+package com.dfr.weather.domain.repository.implementation
 
 import com.dfr.weather.data.provider.DeviceLocationProvider
 import com.dfr.weather.domain.model.DeviceCoordinatesDTO
+import com.dfr.weather.domain.repository.DeviceLocationRepository
 import io.reactivex.rxjava3.core.Single
 import javax.inject.Inject
 
