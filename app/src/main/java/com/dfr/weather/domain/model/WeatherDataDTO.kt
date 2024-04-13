@@ -67,7 +67,7 @@ data class WeatherDataDTO(
         private fun transformEpochTimeToMillis(weatherDate: Int): Long = weatherDate.toLong() * 1000
         private fun transformMetersToKm(meters: Int): Int = meters / 1000
         private fun transformWindSpeedToKmPerHour(metersPerSecond: Double): Double =
-            abs(metersPerSecond * 3.6)
+            metersPerSecond * 3.6
 
         private fun formatDate(
             context: Context,

@@ -1,6 +1,7 @@
 package com.dfr.weather.domain.usecase
 
 import android.content.Context
+import com.dfr.weather.domain.repository.DeviceLocationRepository
 import com.dfr.weather.domain.repository.SearchableCitiesRepository
 import com.dfr.weather.domain.repository.WeatherProviderRemoteRepository
 import dagger.Module
@@ -53,8 +54,13 @@ object UseCaseModule {
     @Provides
     fun providesGetMyLocationCurrentWeatherUseCase(
         @ApplicationContext context: Context,
+        deviceLocationRepository: DeviceLocationRepository,
         weatherProviderRemoteRepository: WeatherProviderRemoteRepository,
     ): GetMyLocationCurrentWeatherUseCase {
-        return GetMyLocationCurrentWeatherUseCaseImpl(context, weatherProviderRemoteRepository)
+        return GetMyLocationCurrentWeatherUseCaseImpl(
+            context,
+            deviceLocationRepository,
+            weatherProviderRemoteRepository
+        )
     }
 }

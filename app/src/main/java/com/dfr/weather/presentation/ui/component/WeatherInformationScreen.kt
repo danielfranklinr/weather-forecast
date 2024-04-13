@@ -27,7 +27,6 @@ import com.dfr.weather.presentation.viewmodel.CurrentWeatherViewModel
 
 @Composable
 fun WeatherInformationScreen(
-    viewModel: CurrentWeatherViewModel = hiltViewModel(),
     weatherDataDTO: WeatherDataDTO,
 ) {
     val isLandscape = isLandscape()

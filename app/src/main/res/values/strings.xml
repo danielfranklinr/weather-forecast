@@ -11,7 +11,6 @@
     <string name="activity_current_weather_date_format">EEEE, MMMM d</string>
     <string name="activity_current_weather_label_instructions"> Select a city from the dropdown or
         press the button to get the weather of your location </string>
-    <string name="activity_current_weather_label_or"> or </string>
     <string name="activity_current_weather_label_temperature_current">Temperature</string>
     <string name="activity_current_weather_label_temperature_feeling">Feels like</string>
     <string name="activity_current_weather_label_temperature_max">Max. Temperature</string>

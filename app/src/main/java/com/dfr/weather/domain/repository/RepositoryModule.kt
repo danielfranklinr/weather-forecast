@@ -2,6 +2,7 @@ package com.dfr.weather.domain.repository
 
 import android.content.Context
 import com.dfr.weather.data.datasource.WeatherProviderRemoteDatasource
+import com.dfr.weather.data.provider.DeviceLocationProvider
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -26,5 +27,13 @@ object RepositoryModule {
     @Provides
     fun providesSearchableCitiesRepository(): SearchableCitiesRepository {
         return SearchableCitiesRepositoryImpl()
+    }
+
+    @Singleton
+    @Provides
+    fun providesDeviceLocationRepository(
+        deviceLocationProvider: DeviceLocationProvider,
+    ): DeviceLocationRepository {
+        return DeviceLocationRepositoryImpl(deviceLocationProvider)
     }
 }

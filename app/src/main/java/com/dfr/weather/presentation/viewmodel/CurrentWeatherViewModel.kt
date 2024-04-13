@@ -20,7 +20,8 @@ class CurrentWeatherViewModel @Inject constructor(
     private val getMyLocationCurrentWeatherUseCase: GetMyLocationCurrentWeatherUseCase,
 ) : ViewModel() {
 
-    private val _uiState = MutableStateFlow<CurrentWeatherUIState>(CurrentWeatherUIState.Loading)
+    private val _uiState =
+        MutableStateFlow<CurrentWeatherUIState>(CurrentWeatherUIState.Instructions)
     val uiState: StateFlow<CurrentWeatherUIState> = _uiState
 
     private var disposable: Disposable? = null
