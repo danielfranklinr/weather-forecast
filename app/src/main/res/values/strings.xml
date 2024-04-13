@@ -1,3 +1,37 @@
 <resources>
     <string name="app_name">Weather</string>
+
+    <string name="service_open_weather_api_url">https://api.openweathermap.org/</string>
+    <string name="service_open_weather_api_icon_url_format">https://openweathermap.org/img/wn/%s@2x.png</string>
+
+    <!--    This value needs to be protected at some level. It could be added to some properties for later injection,
+    or obfuscated/encrypted using proguard/dexguard. For this project we will leave as it is-->
+    <string name="service_open_weather_api_key">e33b59a7fe98c0382aa59e8cf04e1cfa</string>
+
+    <string name="activity_current_weather_date_format">EEEE, MMMM d</string>
+    <string name="activity_current_weather_label_instructions"> Select a city from the dropdown or
+        press the button to get the weather of your location </string>
+    <string name="activity_current_weather_label_or"> or </string>
+    <string name="activity_current_weather_label_temperature_current">Temperature</string>
+    <string name="activity_current_weather_label_temperature_feeling">Feels like</string>
+    <string name="activity_current_weather_label_temperature_max">Max. Temperature</string>
+    <string name="activity_current_weather_label_temperature_min">Min. Temperature</string>
+    <string name="activity_current_weather_label_humidity">Humidity</string>
+    <string name="activity_current_weather_label_visibility">Visibility</string>
+    <string name="activity_current_weather_label_pressure">Pressure (sea)</string>
+    <string name="activity_current_weather_label_wind">Wind</string>
+    <string name="activity_current_weather_label_cities">Cities</string>
+    <string name="activity_current_weather_label_temperature_unit_metric">°C</string>
+    <string name="activity_current_weather_label_wind_speed_unit_metric">km/h</string>
+    <string name="activity_current_weather_label_humidity_unit_metric">%</string>
+    <string name="activity_current_weather_label_pressure_unit_metric">hPa</string>
+    <string name="activity_current_weather_label_visibility_unit_metric">km</string>
+    <string name="activity_current_weather_dialog_btn_ok">OK</string>
+    <string name="activity_current_weather_info_card_decimal_format">%.0f</string>
+
+
+    <string name="activity_current_weather_btn_my_location">Locate me</string>
+
+    <string name="activity_current_weather_error_dialog_title">A problem has occurred</string>
+
 </resources>

@@ -1,4 +1,4 @@
-package com.dfr.weather.ui.theme
+package com.dfr.weather.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
