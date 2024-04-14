@@ -9,6 +9,7 @@ import android.location.LocationManager
 import android.os.Bundle
 import android.os.Looper
 import androidx.core.app.ActivityCompat
+import androidx.core.location.LocationListenerCompat
 import com.dfr.weather.data.model.DeviceCoordinates
 import com.dfr.weather.data.provider.DeviceLocationProvider
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -30,7 +31,7 @@ class DeviceLocationProviderImpl @Inject constructor(
             val locationManager =
                 context.getSystemService(Context.LOCATION_SERVICE) as LocationManager
 
-            locationListener = object : LocationListener {
+            locationListener = object : LocationListenerCompat {
                 override fun onLocationChanged(location: Location) {
                     locationManager.removeUpdates(locationListener!!)
                     emitter.onSuccess(
@@ -45,21 +46,6 @@ class DeviceLocationProviderImpl @Inject constructor(
                     super.onLocationChanged(locations)
                 }
 
-                override fun onFlushComplete(requestCode: Int) {
-                    super.onFlushComplete(requestCode)
-                }
-
-                override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {
-                    super.onStatusChanged(provider, status, extras)
-                }
-
-                override fun onProviderEnabled(provider: String) {
-                    super.onProviderEnabled(provider)
-                }
-
-                override fun onProviderDisabled(provider: String) {
-                    super.onProviderDisabled(provider)
-                }
             }
 
             // Request location updates using GPS provider

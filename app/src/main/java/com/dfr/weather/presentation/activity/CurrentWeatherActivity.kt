@@ -35,8 +35,10 @@ import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -94,23 +96,6 @@ class MainActivity : ComponentActivity() {
             requestPermissionLauncher.launch(permissionsToRequest.toTypedArray())
         }
     }
-
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<out String>,
-        grantResults: IntArray,
-    ) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if (requestCode == LOCATION_PERMISSION_REQUEST_CODE) {
-            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                // Permission granted
-                // Proceed with your location-related tasks
-            } else {
-                // Permission denied
-                // Handle the case where the user denies the permission
-            }
-        }
-    }
 }
 
 
@@ -118,7 +103,7 @@ class MainActivity : ComponentActivity() {
 fun CurrentWeatherScreenContainer(mainViewModel: CurrentWeatherViewModel = hiltViewModel()) {
     val searchableCities = mainViewModel.getSearchableCities()
     var expanded by remember { mutableStateOf(false) }
-    var selectedText by remember { mutableStateOf(searchableCities[0]) }
+    var selectedIndex by rememberSaveable { mutableIntStateOf(0) }
 
     Column {
         Row(
@@ -137,7 +122,7 @@ fun CurrentWeatherScreenContainer(mainViewModel: CurrentWeatherViewModel = hiltV
                     .align(Alignment.CenterVertically)
             ) {
                 TextField(
-                    value = selectedText.name,
+                    value = searchableCities[selectedIndex].name,
                     onValueChange = {},
                     readOnly = true,
                     modifier = Modifier.menuAnchor(),
@@ -152,7 +137,7 @@ fun CurrentWeatherScreenContainer(mainViewModel: CurrentWeatherViewModel = hiltV
                         DropdownMenuItem(
                             text = { Text(text = item.name) },
                             onClick = {
-                                selectedText = item
+                                selectedIndex = searchableCities.indexOf(item)
                                 expanded = false
                                 mainViewModel.getCityWeather(item.name)
                             }
