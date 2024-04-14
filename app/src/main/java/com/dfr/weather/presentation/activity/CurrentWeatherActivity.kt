@@ -52,8 +52,6 @@ import com.dfr.weather.presentation.ui.theme.WeatherTheme
 import com.dfr.weather.presentation.viewmodel.CurrentWeatherViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
-private const val LOCATION_PERMISSION_REQUEST_CODE = 2234145
-
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 

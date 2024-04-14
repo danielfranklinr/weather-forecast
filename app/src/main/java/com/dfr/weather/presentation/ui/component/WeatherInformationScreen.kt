@@ -18,11 +18,10 @@ import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.hilt.navigation.compose.hiltViewModel
 import com.dfr.weather.R
 import com.dfr.weather.domain.model.WeatherDataDTO
 import com.dfr.weather.presentation.ui.component.removeDecimals
-import com.dfr.weather.presentation.viewmodel.CurrentWeatherViewModel
+import com.dfr.weather.presentation.ui.component.transformDegreesToDirection
 
 
 @Composable
@@ -148,6 +147,13 @@ fun WeatherDetailsGrid(weatherDataDTO: WeatherDataDTO) {
                     "${removeDecimals(weatherDataDTO.windSpeed)} ${weatherDataDTO.windSpeedUnit}",
                     stringResource(id = R.string.activity_current_weather_label_wind)
 
+                )
+            }
+            item {
+
+                CurrentWeatherInfoCard(
+                    transformDegreesToDirection(weatherDataDTO.windDegree),
+                    stringResource(id = R.string.activity_current_weather_label_wind_direction)
                 )
             }
             item {

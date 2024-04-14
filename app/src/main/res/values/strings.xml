@@ -19,6 +19,15 @@
     <string name="activity_current_weather_label_visibility">Visibility</string>
     <string name="activity_current_weather_label_pressure">Pressure (sea)</string>
     <string name="activity_current_weather_label_wind">Wind</string>
+    <string name="activity_current_weather_label_wind_direction">Wind Direction</string>
+    <string name="activity_current_weather_label_wind_direction_north">North</string>
+    <string name="activity_current_weather_label_wind_direction_north_west">North West</string>
+    <string name="activity_current_weather_label_wind_direction_north_east">North East</string>
+    <string name="activity_current_weather_label_wind_direction_south">South</string>
+    <string name="activity_current_weather_label_wind_direction_south_west">South West</string>
+    <string name="activity_current_weather_label_wind_direction_south_east">South East</string>
+    <string name="activity_current_weather_label_wind_direction_east">East</string>
+    <string name="activity_current_weather_label_wind_direction_west">West</string>
     <string name="activity_current_weather_label_cities">Cities</string>
     <string name="activity_current_weather_label_temperature_unit_metric">°C</string>
     <string name="activity_current_weather_label_wind_speed_unit_metric">km/h</string>
